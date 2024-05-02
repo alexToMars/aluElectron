@@ -1,3 +1,7 @@
+.ImagenesP{
+    width:8em;
+    height: 8em;
+}
 
 .custom-head{
     background: #3A8C11;
@@ -13,251 +17,87 @@
     background: #3A8C11;
 }
 
-.externo-carrusel {
-    padding: 2px; /* Ajusta el padding según sea necesario */
-    border: 5px solid #ccc; /* Añade bordes */
+.ImagenCar{
+    width: 7em;
+    height: 7em;
 }
 
-.carrusel{
-    padding: 5px;
-    border: 1px solid #ccc;
-    width: 100%;
+.ImagenGal{
+    width: 15em;
+    height: 15em;
 }
-.custom-carousel {
-    max-width: 100%; /* Tamaño máximo del carrusel */
-    margin: 0 auto; /* Centra el carrusel */
-}
-
-.carrucel .carousel-item img {
-    width: 100%; /* Ancho fijo para todas las imágenes */
-    height: 500px; /* Altura fija para todas las imágenes */
-}
-
-
-ul{
-    list-style-type: none;
-    background-color: #45A415;
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
-}
-
-li{
-    float: left; 
-}
-li a{
-    display: block;
-    color: white;
+section{
     text-align: center;
-    padding: 15px;
-    text-decoration: none;
 }
-li a:hover{
-    background-color: #439c16;
+
+table{
+    margin: auto;
+    border-style: dashed double none;
+}
+td{
+    text-align: center;
+    border-style: double double none;
+}
+
+input{
+    font-size: 1.5em;
+    text-align: center;
+}
+
+input::placeholder{
+    color: red;
+    font-size: .8em;
+}
+
+.claseImagenLogo{
+    max-width: 100px; 
+    height: auto; 
+    vertical-align: middle; 
+}
+
+.borde{
+    border: none;
+    outline: none;
+    background-color: white;
+}
+
+.imagenestabla{
+    background-color: white;
     width: 100%;
     height: 100%;
+    
 }
-/*Contacto*/
-h3.centrar-texto{
-    font-size: 36px;
-    line-height: 1.2;
+.row {
     text-align: center;
-}
-
-.contacto-bg{
-    background-image: url(../img/contacto.jpeg);
-    height: 800px;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-.formulario{
-    background-color: #fff;
-    margin: -50px auto 0 auto;
-    width: 80%;
-    padding: 50px;
-}
-
-.campo{
+    margin: auto;
     display: flex;
-    margin-bottom: 20px;
+    flex-wrap: wrap;
+    margin-left: -15px; 
+    margin-right: -15px; 
 }
-
-.campo_label{
-    flex:0 0 90px;
-    text-align: right;
-    padding-right: 20px;
-    font-size: 16px ;
-    align-items: center;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.campo__field{
+.col {
     flex: 1;
-    border: 1px solid #f3f3f3;
-    padding: 6px 8px;
+    padding-left: 15px; 
+    padding-right: 15px; 
 }
-
-.campo__field--textarea{
-    height: 200px;
+.tdImagen{
+    background-color: white;
 }
-
-.botton{
-    display: inline-block;
-    color: #fff;
-    text-align: center;
-    padding: 10px 30px;
-    font-size: 18px;
-    text-transform: uppercase;
-    font-weight: 700;
-    margin-bottom: 20px;
-    border: none;
+.carrito{
+    width: 100px;
+    background-color: white;
 }
-
-.botton:hover{
-    cursor: pointer;
-    background-color:  #439c16;
-}
-
-.btn_custom:hover{
-    background: #898989;
-}
-.custom-img{
-    float: left;
-    width: 50px;
-    height: 50px;
-}
-/*Footer*/
-.footer-basic{
-    /* 40 px arriba 0 px a los lados */
-    padding: 40px 0px;
-    background-color: #439c16;
-    color: #4b4c4d;
-}
-
-.footer-basic .social{
-    text-align: center;
-}
-
-.footer-basic .social >a{
-    font-size: 24px;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    display: inline-block;
-    text-align: center;
-    border-radius: 50%;
-    border: 1px solid rgb(255,255,255);
-    margin: 0 8px;
-    color: rgb(255,255,255);
-    opacity:0.50;
-}
-/* Hoover es cuando el raton esta encima del elemento */
-.footer-basic .social >a:hover{
-    opacity:0.95;
-}
-
-.footer-basic .copyrigth{
-    margin-top: 15px;
-    text-align: center;
-    font-size: 15px;
-    margin-bottom: 0px;
-}
-.copyrigth{
-    color:white;
-}
-
-/*ofertas*/
-.bg-gray{
-    background-color:#f3f3f3 ;
-}
-
-.oferta-ind{
-    height: 350px;
-    background-color:#fff ;
-    max-width: 20%;
-    border-radius: 16px;
-}
-
-.seccion-ofertas{
-    height: 450px;
-    padding:15px 80px;
-    display: flex;
-    place-content: space-around;
-}
-
-.img-producto{
-    max-height: 150px;
-    width:-webkit-fill-acaliable ;
-    padding-top:25px ;
-}
-
-.txt-base-carousel-section--discount{
-    font-size: 11px;
-    color: #fff;
-    background-color: #45A415;
-    border-radius: 6px;
-    padding: 0 10px;
-}
-
-.ml-1{
-    margin-left: 4px;
-
-}
-
-.float-right{
-    display:flex;
-    float:right;
-}
-
-.mr-2{
-    margin-right: 8px;
-}
-
-.mt-5{
-    margin-top: 20px;
-}
-
-.botton-small{
-    display: inline-block;
-    color: #fff;
-    background-color:  #45A415;
-    text-align: center;
-    padding: 4px 12px;
-    font-size: 12px;
-    text-transform: uppercase;
-    font-weight: 700;
-    border: none;
-    border-radius: 12px;
-}
-
-.botton-small:hover{
-    cursor: pointer;
-    background-color: #367e13;
-}
-
-.txt-base-carousel-section-price{
-    font-size: 16px;
-    text-align: left;
-    color: #222;
-    font-weight: 700;
-}
-
-.txt-base-carousel-section-price label{
-    font-size: 12px !important;
-
-}
-
-.txt-base-carousel-section-price--dscto{
-    color: #ef9a9a;
-    text-decoration: line-through;
-
-}
-
-.title-producto{
-    font-size: 16px;
-}
-
+.col-1 { flex-basis: 8.33333%; } /* 1/12 */
+.col-2 { flex-basis: 16.66667%; } /* 2/12 */
+.col-3 { flex-basis: 25%; } /* 3/12 */
+.col-4 { flex-basis: 33.33333%; } /* 4/12 */
+.col-5 { flex-basis: 41.66667%; } /* 5/12 */
+.col-6 { flex-basis: 50%; } /* 6/12 */
+.col-7 { flex-basis: 58.33333%; } /* 7/12 */
+.col-8 { flex-basis: 66.66667%; } /* 8/12 */
+.col-9 { flex-basis: 75%; } /* 9/12 */
+.col-10 { flex-basis: 83.33333%; } /* 10/12 */
+.col-11 { flex-basis: 91.66667%; } /* 11/12 */
+.col-12 { flex-basis: 100%; } /* 12/12 */
 
 
