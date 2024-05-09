@@ -5,12 +5,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Galeria</title>
-        <link href="../css/estilos.css" rel="stylesheet">
-        
+        <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/styles2.css" rel="stylesheet">
         <style>
             section{
                 display: inline-block;
-                background-color: #cde4ff;
                 min-height: 720px;
                 width: 100%;
             }
@@ -18,17 +17,18 @@
         
     </head>
 
-    <body>
-    <header id="headerEstElectronic" class="fixed-header">
+    <body class="bg-custom">
+    <div>
+        <header id="headerEstElectronic" class="fixed-header">
             <div class="container text-center custom-head">
                 <div class="row">
                     <div class="col-3">
                         <div class="row ">
                             <div class="col-6">
-                                <img src="img/WhatsApp Image 2024-03-07 at 1.24.43 AM (2).jpeg" class="custom-img" alt="Logo">
+                                <img src="WhatsApp Image 2024-03-07 at 1.24.43 AM (2).jpeg" class="custom-img" alt="Logo">
                             </div>
-                            <div class="col-6">
-                                <p>Est electronics</p>
+                            <div class="col-6 apoyo_nav">
+                                <p style="font-size: 22px;">Est electronics</p>
                             </div>
                         </div>
                         
@@ -53,33 +53,35 @@
                             Iniciar sesion
                         </button>
                     </div>
-                    <div class="col-1"><ion-icon name="cart-outline"></ion-icon></div>
+                    <div class="col-1"><a href="php/galeria.php" style="font-size: 2em;"><ion-icon name="cart-outline"></ion-icon></a></div>
+                    
                 </div>
             </div>
         </header>
         <nav class="text-center custom-nav">
+            <br>
             <ul class="row">
                 <li class="col-sm-3 nav_comps">
-                    <a>Componentes pasivos</a>
+                    <a class="apoyo_nav">Componentes pasivos</a>
                 </li>
                 <li class="col-sm-3 nav_comps">
-                    <a>Componentes activos</a>
+                    <a class="apoyo_nav">Componentes activos</a>
                 </li>
                 <li class="col-sm-3 nav_comps">
-                    <a>Microcontroladores</a>
+                    <a class="apoyo_nav">Microcontroladores</a>
                 </li>
                 <li class="col-sm-3 nav_comps">
-                    <a>Circuitos integrados</a>
+                    <a class="apoyo_nav">Circuitos integrados</a>
                 </li>
             </ul>
+            <br>
         </nav>
         <section>
-            <br>
-            <table>
+            <table class="table table-bordered">
                 <?php
                     $abrirTr="<tr>";
                     $cerrarTr="</tr>";
-                    $abrirTd="<td>";
+                    $abrirTd="<td class=tamanioLetra>";
                     $cerrarTd="</td>";
                     $abrirTdImagen="<td class=tdImagen>";
                     $abrirTh="<th>";
@@ -91,19 +93,23 @@
                     include("conectbd.php");
                     $apoyoClass="class=imagenestabla";
                     $Resultado=mysqli_query($conexion, "SELECT * FROM productos WHERE existenciaP>5;");
-                    echo $abrirTr.$abrirTh."Nombre".$cerrarTh.$abrirTh."Imagen de muestra".$cerrarTh.$abrirTh."Precio".$cerrarTh.$cerrarTr;
+                    echo $abrirTr.$abrirTh."Nombre".$cerrarTh.$abrirTh."Imagen de muestra".$cerrarTh.$abrirTh."Precio".$cerrarTh.$abrirTh.$cerrarTh.$cerrarTr;
                     while($row=mysqli_fetch_array($Resultado)){
+                        $apoyohref="agregar.php?id=".$row['idP'];
+                        $abrirAncla="<a href=".$apoyohref.">";
+                        $cerrarAncla="</a>";
                         echo $abrirTr;
                         echo $abrirTd.$row['nombreP'].$cerrarTd;
                         echo $abrirTdImagen."<img ".$apoyoClass." src=".$apoyoSrc.$row['imagenP'].">".$cerrarTd;
                         echo $abrirTd.$row['precioP'].$cerrarTd;
-                        echo $abrirTdImagen.$apoyoImg.$cerrarTd;
+                        echo $abrirTdImagen.$abrirAncla.$apoyoImg.$cerrarAncla.$cerrarTd;
                         echo $cerrarTr;
                     }
                     mysqli_close($conexion);
                 ?>
             </table>
             <br>
+            <div class="container text-center">
         </section>
     </body>
 </html>

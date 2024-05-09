@@ -5,6 +5,8 @@
 }
 .custom-nav{
     background:#45A415 ;
+    width: 100%;
+    height: 100%;
 }
 #headerEstElectronic{ 
     max-width: 100%; 
@@ -45,6 +47,9 @@ ul{
 li{
     float: left; 
 }
+.tamanioLetra{
+    font-size: 18px;
+}
 li a{
     display: block;
     color: white;
@@ -53,7 +58,7 @@ li a{
     text-decoration: none;
 }
 li a:hover{
-    background-color: #439c16;
+    background-color: #F7A354;
     width: 100%;
     height: 100%;
 }
@@ -69,6 +74,10 @@ h3.centrar-texto{
     height: 800px;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.apoyo_nav{
+    color:white;
 }
 
 .formulario{
@@ -125,7 +134,7 @@ h3.centrar-texto{
 }
 .custom-img{
     float: left;
-    width: 50px;
+    width: 150px;
     height: 50px;
 }
 /*Footer*/
@@ -259,4 +268,60 @@ h3.centrar-texto{
     font-size: 16px;
 }
 
+.tdImagen{
+    background-color: white;
+    text-align: center;
+}
+.carrito{
+    width: 100px;
+    background-color: white;
+    margin: auto;
+    object-fit: cover;
+}
 
+.claseImagenLogo{
+    max-width: 100px; 
+    height: auto; 
+    vertical-align: middle; 
+}
+
+.borde{
+    border: none;
+    outline: none;
+    background-color: white;
+}
+
+.imagenestabla{
+    background-color: white;
+    width: 150x;
+    height: 150px;
+    
+}
+
+.imagenestabla img{
+    width: 150x;
+    height: 150px;
+    object-fit: cover;   
+}
+
+.ImagenCar{
+    width: 7em;
+    height: 7em;
+}
+
+.ImagenGal{
+    width: 15em;
+    height: 15em;
+}
+
+.ImagenesP{
+    width:8em;
+    height: 8em;
+}
+.centrar{
+    text-align: center;
+    margin: auto;
+    border: solid 1px;
+    width: 500px;
+    height: 300px;
+}
