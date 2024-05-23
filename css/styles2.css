@@ -1,6 +1,6 @@
 
 .custom-head{
-    background: #3A8C11;
+    background: #ffffff;
     padding: 10px;
 }
 .custom-nav{
@@ -8,11 +8,14 @@
     width: 100%;
     height: 100%;
 }
+.letras{
+    color: #439c16;
+}
 #headerEstElectronic{ 
     max-width: 100%; 
     margin: 0; 
     padding: 0;
-    background: #3A8C11;
+    background: #ffffff;
 }
 
 .externo-carrusel {
@@ -78,6 +81,7 @@ h3.centrar-texto{
 
 .apoyo_nav{
     color:white;
+    font-size: 23px;
 }
 
 .formulario{
@@ -128,14 +132,18 @@ h3.centrar-texto{
     cursor: pointer;
     background-color:  #439c16;
 }
-
+.btn_custom{
+    background-color:#4d8a2f;
+    transform: scale(1.2);
+    
+}
 .btn_custom:hover{
     background: #898989;
 }
 .custom-img{
     float: left;
-    width: 150px;
-    height: 50px;
+    width: 200px;
+    height: 100px;
 }
 /*Footer*/
 .footer-basic{
@@ -150,10 +158,10 @@ h3.centrar-texto{
 }
 
 .footer-basic .social >a{
-    font-size: 24px;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
+    font-size: 44px;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
     display: inline-block;
     text-align: center;
     border-radius: 50%;

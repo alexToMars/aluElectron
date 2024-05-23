@@ -92,7 +92,7 @@
                     $apoyoImg="<img ".$apoyoClass2." src=".$apoyo2Img." alt=carritoCompras>";
                     include("conectbd.php");
                     $apoyoClass="class=imagenestabla";
-                    $Resultado=mysqli_query($conexion, "SELECT * FROM productos WHERE existenciaP>5;");
+                    $Resultado=mysqli_query($conexion, "SELECT * FROM producto WHERE existenciaP>5;");
                     echo $abrirTr.$abrirTh."Nombre".$cerrarTh.$abrirTh."Imagen de muestra".$cerrarTh.$abrirTh."Precio".$cerrarTh.$abrirTh.$cerrarTh.$cerrarTr;
                     while($row=mysqli_fetch_array($Resultado)){
                         $apoyohref="agregar.php?id=".$row['idP'];
