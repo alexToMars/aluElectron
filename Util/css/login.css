@@ -1,0 +1,20 @@
+.content2{
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+}
+.contenedor{
+
+    margin: auto;
+    text-align: center;
+    border-radius: 5%;
+    max-width:500px;
+    background:#FFFFFF ;
+    border: 2px solid #45A415;
+}
+.apoyo{
+    color: #45A415;
+}
+.form-control{
+    width: 80%;
+    margin: auto;
+}

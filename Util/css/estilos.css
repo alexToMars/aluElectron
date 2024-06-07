@@ -1,0 +1,102 @@
+.ImagenesP{
+    width:8em;
+    height: 8em;
+}
+
+.custom-head{
+    background: #3A8C11;
+    padding: 10px;
+}
+.custom-nav{
+    background:#45A415 ;
+}
+#headerEstElectronic{ 
+    max-width: 100%; 
+    margin: 0; 
+    padding: 0;
+    background: #3A8C11;
+}
+
+.ImagenCar{
+    width: 7em;
+    height: 7em;
+}
+
+.ImagenGal{
+    width: 15em;
+    height: 15em;
+}
+section{
+    text-align: center;
+}
+
+table{
+    margin: auto;
+    border-style: dashed double none;
+}
+td{
+    text-align: center;
+    border-style: double double none;
+}
+
+input{
+    font-size: 1.5em;
+    text-align: center;
+}
+
+input::placeholder{
+    color: red;
+    font-size: .8em;
+}
+
+.claseImagenLogo{
+    max-width: 100px; 
+    height: auto; 
+    vertical-align: middle; 
+}
+
+.borde{
+    border: none;
+    outline: none;
+    background-color: white;
+}
+
+.imagenestabla{
+    background-color: white;
+    width: 100%;
+    height: 100%;   
+}
+.row {
+    text-align: center;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px; 
+    margin-right: -15px; 
+}
+.col {
+    flex: 1;
+    padding-left: 15px; 
+    padding-right: 15px; 
+}
+.tdImagen{
+    background-color: white;
+}
+.carrito{
+    width: 100px;
+    background-color: white;
+}
+.col-1 { flex-basis: 8.33333%; } /* 1/12 */
+.col-2 { flex-basis: 16.66667%; } /* 2/12 */
+.col-3 { flex-basis: 25%; } /* 3/12 */
+.col-4 { flex-basis: 33.33333%; } /* 4/12 */
+.col-5 { flex-basis: 41.66667%; } /* 5/12 */
+.col-6 { flex-basis: 50%; } /* 6/12 */
+.col-7 { flex-basis: 58.33333%; } /* 7/12 */
+.col-8 { flex-basis: 66.66667%; } /* 8/12 */
+.col-9 { flex-basis: 75%; } /* 9/12 */
+.col-10 { flex-basis: 83.33333%; } /* 10/12 */
+.col-11 { flex-basis: 91.66667%; } /* 11/12 */
+.col-12 { flex-basis: 100%; } /* 12/12 */
+
+
