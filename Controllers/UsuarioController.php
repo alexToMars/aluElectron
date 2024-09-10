@@ -24,19 +24,18 @@ if (isset($_POST['funcion'])) {
         }
     } elseif ($funcion == 'listar_usuario') {
         echo "Listar usuarios";
-    }elseif($funcion == 'register'){
+    } elseif ($funcion == 'register') {
         $user = $_POST['user'];
         $telefono = $_POST['telefono'];
         $pass = $_POST['pass'];
         $nombres = $_POST['nombres'];
         $dni = $_POST['dni'];
         $apellidos = $_POST['apellidos'];
-        $email= $_POST['email'];
-        $usuario->registrarse($user,$telefono, $pass, $nombres, $dni , $apellidos, $email);
+        $email = $_POST['email'];
+        $usuario->registrarse($user, $telefono, $pass, $nombres, $dni, $apellidos, $email);
         if ($usuario->objetos != null) {
             echo 'Registrado';
-        }
-        else{
+        } else {
             echo 'No_Registrado';
         }
     } elseif ($funcion == 'verificar_sesion') {
@@ -51,6 +50,32 @@ if (isset($_POST['funcion'])) {
             echo $jsonstring;
         } else {
             echo '';
+        }
+    } elseif ($funcion == 'obtener_datos') {
+        // Función para obtener los datos del usuario basado en el ID guardado en la sesión
+        if (!empty($_SESSION['id'])) {
+            $idUsuario = $_SESSION['id'];
+            $usuario->obtener_datos($idUsuario);
+            if ($usuario->objetos != null) {
+                // Convertir los datos a formato JSON
+                $json = array();
+                foreach ($usuario->objetos as $objeto) {
+                    $json[] = array(
+                        'id' => $objeto->id,
+                        'user' => $objeto->usuario,
+                        'nombres' => $objeto->nombres,
+                        'apellidos' => $objeto->apellidos,
+                        'email' => $objeto->email,
+                        'telefono' => $objeto->telefono,
+                        'dni' => $objeto->dni
+                    );
+                }
+                echo json_encode($json);
+            } else {
+                echo 'No se encontraron datos del usuario';
+            }
+        } else {
+            echo 'No hay sesión activa';
         }
     }
 } else {

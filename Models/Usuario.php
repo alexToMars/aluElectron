@@ -28,5 +28,13 @@
             $this->objetos =$query->fetchAll();
             return $this->objetos;
         }
+
+        public function obtener_datos($idUsuario) {
+            $sql = "SELECT * FROM usuario WHERE id = :id";
+            $query = $this->acceso->prepare($sql);
+            $query ->execute(array(':id'=>$idUsuario));
+            $this->objetos =$query->fetchAll();
+            return $this->objetos;
+        }
         
     }

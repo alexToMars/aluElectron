@@ -21,7 +21,11 @@ $(document).ready(function() {
                 $.each(carrito, function(idProducto, producto) {
                     template += `<tr>
                         <td>${producto.nombre}</td>
-                        <td>${producto.cantidad}</td>
+                        <td>
+                            <a href="#" class="actualizar-cantidad" data-id="${idProducto}" data-action="decrement">-</a>
+                            ${producto.cantidad}
+                            <a href="#" class="actualizar-cantidad" data-id="${idProducto}" data-action="increment">+</a>
+                        </td>
                         <td>$${producto.precio}</td>
                         <td>$${(producto.precio * producto.cantidad)}</td>
                         <td><a href="#" class="eliminar-producto" data-id="${idProducto}">Eliminar</a></td>
@@ -40,10 +44,24 @@ $(document).ready(function() {
         e.preventDefault();
         let idProducto = $(this).data('id');
         $.post('../Controllers/CarritoController.php', { accion: 'eliminar', id_producto: idProducto }, function(response) {
-            
             let resultado = JSON.parse(response);
             alert(resultado.mensaje);
-            mostrarCarrito(); // Refrescar el carrito después de eliminar
+            mostrarCarrito();
+        });
+    });
+
+    // Incrementar o decrementar cantidad del producto
+    $(document).on('click', '.actualizar-cantidad', function(e) {
+        e.preventDefault();
+        let idProducto = $(this).data('id');
+        let accion = $(this).data('action'); 
+
+        $.post('../Controllers/CarritoController.php', {
+            accion: accion === 'increment' ? 'incrementar' : 'decrementar',
+            id_producto: idProducto
+        }, function(response) {
+            let resultado = JSON.parse(response);
+            mostrarCarrito(); 
         });
     });
 });

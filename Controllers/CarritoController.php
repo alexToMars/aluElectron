@@ -2,25 +2,10 @@
 include_once('../Util/php/session_car.php');
 
 class CarritoController {
-    
     public function __construct() {
         if (!isset($_SESSION['carrito'])) {
             $_SESSION['carrito'] = array();
         }
-    }
-
-    // Función para agregar producto al carrito
-    public function agregarProducto($idProducto, $nombreProducto, $precioProducto, $cantidad) {
-        if (isset($_SESSION['carrito'][$idProducto])) {
-            $_SESSION['carrito'][$idProducto]['cantidad'] += $cantidad;
-        } else {
-            $_SESSION['carrito'][$idProducto] = array(
-                'nombre' => $nombreProducto,
-                'precio' => $precioProducto,
-                'cantidad' => $cantidad
-            );
-        }
-        return json_encode(array('mensaje' => 'Producto agregado al carrito con éxito'));
     }
 
     // Función para mostrar productos del carrito
@@ -32,7 +17,31 @@ class CarritoController {
         }
     }
 
-    // Función para eliminar un producto del carrito
+    // Incrementar cantidad de producto
+    public function incrementarCantidad($idProducto) {
+        if (isset($_SESSION['carrito'][$idProducto])) {
+            $_SESSION['carrito'][$idProducto]['cantidad'] += 1;
+            return json_encode(array('mensaje' => 'Cantidad incrementada'));
+        } else {
+            return json_encode(array('mensaje' => 'Producto no encontrado en el carrito'));
+        }
+    }
+
+    // Decrementar cantidad de producto
+    public function decrementarCantidad($idProducto) {
+        if (isset($_SESSION['carrito'][$idProducto])) {
+            if ($_SESSION['carrito'][$idProducto]['cantidad'] > 1) {
+                $_SESSION['carrito'][$idProducto]['cantidad'] -= 1;
+                return json_encode(array('mensaje' => 'Cantidad decrementada'));
+            } else {
+                return json_encode(array('mensaje' => 'La cantidad no puede ser menor a 1'));
+            }
+        } else {
+            return json_encode(array('mensaje' => 'Producto no encontrado en el carrito'));
+        }
+    }
+
+    // Eliminar producto del carrito
     public function eliminarProducto($idProducto) {
         if (isset($_SESSION['carrito'][$idProducto])) {
             unset($_SESSION['carrito'][$idProducto]);
@@ -43,33 +52,29 @@ class CarritoController {
     }
 }
 
-// Aquí gestionamos las peticiones AJAX
 $carrito = new CarritoController();
 
 if (isset($_POST['accion'])) {
     switch ($_POST['accion']) {
-        case 'agregar':
-            $idProducto = $_POST['id_producto'];
-            $nombreProducto = $_POST['nombre_producto'];
-            $precioProducto = $_POST['precio_producto'];
-            $cantidad = $_POST['cantidad'];
-            echo $carrito->agregarProducto($idProducto, $nombreProducto, $precioProducto, $cantidad);
-            break;
-        
         case 'mostrar':
             echo $carrito->mostrarCarrito();
             break;
-
+        case 'incrementar':
+            $idProducto = $_POST['id_producto'];
+            echo $carrito->incrementarCantidad($idProducto);
+            break;
+        case 'decrementar':
+            $idProducto = $_POST['id_producto'];
+            echo $carrito->decrementarCantidad($idProducto);
+            break;
         case 'eliminar':
             $idProducto = $_POST['id_producto'];
             echo $carrito->eliminarProducto($idProducto);
             break;
-
         default:
             echo json_encode(array('mensaje' => 'Acción no válida'));
     }
 } else {
     echo json_encode(array('mensaje' => 'No se ha enviado ninguna acción'));
 }
-?>
 
