@@ -62,7 +62,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#"><i class="fas fa-user-cog"></i> Mi perfil</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="fas fa-shopping-basket"></i>Mis pedidos</a></li>
+                                <li><a class="dropdown-item" href="carrito.php"><i class="fas fa-shopping-basket"></i>Mis pedidos</a></li>
                                 <li><a class="dropdown-item" href="../Controllers/logout.php"><i class="fas fa-user-times"></i>Cerrar sesion</a></li>
                             </ul>
                         </div>

@@ -1,7 +1,7 @@
 <?php
 include_once("../Models/Producto.php");
+include_once("../Util/php/session_car.php");
 $producto = new Producto();
-session_start();
 
 if (isset($_POST['funcion']) || isset($_GET['funcion'])) {
     $funcion = isset($_POST['funcion']) ? $_POST['funcion'] : $_GET['funcion'];
