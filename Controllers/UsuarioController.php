@@ -1,7 +1,7 @@
 <?php
 include_once("../Models/Usuario.php");
+include_once("../Util/php/session_car.php");
 $usuario = new Usuario();
-session_start();
 
 if (isset($_POST['funcion'])) {
     $funcion = $_POST['funcion'];

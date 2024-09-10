@@ -5,13 +5,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Est Electronic</title>
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="../Util/css/select2.min.css">
+    <link rel="stylesheet" href="../Util/css/Css/all.min.css">
+    <link rel="stylesheet" href="../Util/css/adminlte.min.css">
+    <link rel="stylesheet" href="../Util/css/sweetalert2.min.css">
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
         rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
         crossorigin="anonymous" />
     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
-    <link href="Util/css/styles2.css" rel="stylesheet">
+    <link href="../Util/css/styles2.css" rel="stylesheet">
 </head>
 
 <body class="bg-custom">
@@ -22,7 +28,7 @@
                     <div class="col-2">
                         <div class="row ">
                             <div class="col-sm-6">
-                                <img src="Util/img/logo.jpeg" class="custom-img" alt="Logo">
+                                <a href="../index.php"><img src="../Util/img/logo.jpeg" class="custom-img" alt="Logo"></a>
                             </div>
                         </div>
                     </div>
@@ -57,11 +63,11 @@
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#"><i class="fas fa-user-cog"></i> Mi perfil</a></li>
                                 <li><a class="dropdown-item" href="#"><i class="fas fa-shopping-basket"></i>Mis pedidos</a></li>
-                                <li><a class="dropdown-item" href="Controllers/logout.php"><i class="fas fa-user-times"></i>Cerrar sesion</a></li>
+                                <li><a class="dropdown-item" href="../Controllers/logout.php"><i class="fas fa-user-times"></i>Cerrar sesion</a></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-1"> <a href="Views/galeria.php" style="font-size: 4em; color: rgb(50, 141, 50) ;"><ion-icon name="cart-outline" class="carrito"></ion-icon></a></div>
+                    <div class="col-1"> <a href="galeria.php" style="font-size: 4em; color: rgb(50, 141, 50) ;"><ion-icon name="cart-outline" class="carrito"></ion-icon></a></div>
                 </div>
 
             </div>

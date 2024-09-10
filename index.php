@@ -185,5 +185,4 @@
     </div>
 <?php
 include_once 'Views/layouts/footer.php';
-echo 'Incluido exitosamente';
 ?>

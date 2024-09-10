@@ -105,6 +105,7 @@
 <script src="../Util/js/toastr.min.js"></script>
 <script src="../Util/js/jquery.validate.min.js"></script>
 <script src="../Util/js/additional-methods.min.js"></script>
+<script src="register.js"></script>
   </body>
 </html>
 <script>
