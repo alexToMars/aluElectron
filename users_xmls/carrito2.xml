@@ -1,0 +1,2 @@
+<?xml version="1.0"?>
+<productos><producto id="1"><nombre>Resistencia 330ohms</nombre><precio>1</precio><cantidad>10</cantidad><imagen>res330.png</imagen></producto><producto id="2"><nombre>Arduino Uno</nombre><precio>350</precio><cantidad>10</cantidad><imagen>arduinouno.png</imagen></producto></productos>

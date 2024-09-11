@@ -48,9 +48,9 @@
                     <div class="col-sm-2">
                         <br>
                         <div class="row">
-                            <div class="col-sm-6" id="nav_login"><a href="Views/register.php"><input name="Agregar" class="btn btn-success btn_custom" type="submit" id="btnAgregar" value="Sign in"></a></div>
+                            <div class="col-sm-6" id="nav_login"><a href="register.php"><input name="Agregar" class="btn btn-success btn_custom" type="submit" id="btnAgregar" value="Sign in"></a></div>
                             <br>
-                            <div class="col-sm-6" id="nav_register"><a href="Views/login.php"><input name="Agregar" class="btn btn-success btn_custom" type="submit" id="btnAgregar" value="Login"></a></div>
+                            <div class="col-sm-6" id="nav_register"><a href="login.php"><input name="Agregar" class="btn btn-success btn_custom" type="submit" id="btnAgregar" value="Login"></a></div>
                         </div>
                     </div>
                     <div class="col-sm-2">

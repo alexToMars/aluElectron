@@ -15,11 +15,13 @@ $(document).ready(function() {
             } else {
                 // Si hay productos en el carrito
                 template += '<table>';
-                template += '<thead><tr><th>Producto</th><th>Cantidad</th><th>Precio Unitario</th><th>Precio Total</th><th>Acciones</th></tr></thead>';
+                template += '<thead><tr><th>Imagen</th><th>Producto</th><th>Cantidad</th><th>Precio Unitario</th><th>Precio Total</th><th>Acciones</th></tr></thead>';
                 template += '<tbody>';
 
                 $.each(carrito, function(idProducto, producto) {
+                    console.log(producto);
                     template += `<tr>
+                        <td><img class="imagenestabla" src="../Util/img/${producto.imagen}"></td>
                         <td>${producto.nombre}</td>
                         <td>
                             <a href="#" class="actualizar-cantidad" data-id="${idProducto}" data-action="decrement">-</a>
@@ -38,6 +40,18 @@ $(document).ready(function() {
             }
         });
     }
+
+    // Agregar producto al carrito
+    $(document).on('click', '.agregar-carrito', function(e) {
+        e.preventDefault();
+        $.post('../Controllers/CarritoController.php', {
+            accion: 'agregar',
+        }, function(response) {
+            let resultado = JSON.parse(response);
+            alert(resultado.mensaje);
+            mostrarCarrito();
+        });
+    });
 
     // Eliminar producto del carrito
     $(document).on('click', '.eliminar-producto', function(e) {
@@ -64,4 +78,9 @@ $(document).ready(function() {
             mostrarCarrito(); 
         });
     });
+    $('button').on('click', function() {
+        // Redirigir a la URL que genera el XML
+        window.location.href = '../Controllers/CarritoController.php?accion=generar_xml';
+    });
+        
 });

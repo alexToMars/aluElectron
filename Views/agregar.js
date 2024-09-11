@@ -20,25 +20,26 @@ $(document).ready(function() {
                     <form id="form-agregar-carrito">
                         <input type="hidden" name="accion" value="agregar">
                         <input type="hidden" name="id_producto" value="${prod.idp}">
+                        <input type="hidden" name="imagen_producto" value="${prod.imagenp}">
                         <input type="hidden" name="nombre_producto" value="${prod.nombrep}">
                         <input type="hidden" name="precio_producto" value="${prod.preciop}">
                         <label for="cantidad">Cantidad:</label>
                         <input type="number" name="cantidad" id="cantidad" size="8" max="10" min="1" required>
                         <input class="btn btn-success" type="submit" value="AGREGAR AL CARRITO">
-                    </form>`;
+                    </form>
+                    `;
                 });
                 $('#producto-detalle').html(template);
 
-                // Aquí manejamos el formulario de agregar al carrito
                 $('#form-agregar-carrito').on('submit', function(e) {
-                    e.preventDefault(); // Evitamos el comportamiento por defecto del formulario
-
+                    e.preventDefault();
+                
                     let formData = $(this).serialize(); // Obtenemos los datos del formulario
                     $.post('../Controllers/CarritoController.php', formData, function(response) {
                         let resultado = JSON.parse(response);
                         alert(resultado.mensaje); // Mostramos el mensaje devuelto por el controlador
                     });
-                });
+                });                
             } else {
                 $('#producto-detalle').html('<p>Producto no encontrado.</p>');
             }
